@@ -1,6 +1,5 @@
 package category;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -15,7 +14,7 @@ public abstract class Category {
     }
 
 
-    public abstract LocalDate findDeliveryDueDate();
+    public abstract LocalDateTime findDeliveryDueDate();
 
     public String generateCategoryCode(){
         return id.toString().substring(0,8).concat("-").concat(name.substring(0,2));

@@ -1,3 +1,6 @@
+import category.Category;
+import category.Electronic;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -19,6 +22,18 @@ public class DataGenerator {
         StaticConstants.CUSTOMER_LIST.add(customer1);
         StaticConstants.CUSTOMER_LIST.add(customer2);
 
+
+    }
+
+    public static void createCategory(){
+
+        Category category1 = new Electronic(UUID.randomUUID(), "Electronic");
+        Category category2 = new Electronic(UUID.randomUUID(), "Furniture");
+        Category category3 = new Electronic(UUID.randomUUID(), "Skincare");
+
+        StaticConstants.CATEGORY_LIST.add(category1);
+        StaticConstants.CATEGORY_LIST.add(category2);
+        StaticConstants.CATEGORY_LIST.add(category3);
 
     }
 
