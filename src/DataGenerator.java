@@ -37,4 +37,18 @@ public class DataGenerator {
 
     }
 
+    public static void createProduct(){
+        Product product1 =
+                new Product(UUID.randomUUID(), "PS5",230.72, 7, 7,StaticConstants.CATEGORY_LIST.get(0).getId());
+        Product product2 =
+                new Product(UUID.randomUUID(), "XBOX", 120.34, 15, 15, StaticConstants.CATEGORY_LIST.get(0).getId());
+        Product product3 =
+                new Product(UUID.randomUUID(), "Chair", 30.87, 85, 85, StaticConstants.CATEGORY_LIST.get(1).getId());
+
+        StaticConstants.PRODUCT_LIST.add(product1);
+        StaticConstants.PRODUCT_LIST.add(product2);
+        StaticConstants.PRODUCT_LIST.add(product3);
+
+    }
+
 }
