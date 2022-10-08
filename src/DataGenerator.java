@@ -3,6 +3,8 @@ import balance.CustomerBalance;
 import balance.GiftCardBalance;
 import category.Category;
 import category.Electronic;
+import discount.AmountBasedDiscount;
+import discount.Discount;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -61,6 +63,10 @@ public class DataGenerator {
 
         StaticConstants.CUSTOMER_BALANCE_LIST.add(customerBalance);
         StaticConstants.GIFT_CARD_BALANCE_LIST.add(giftCardBalance);
+    }
+
+    public static void createDiscound(){
+        Discount amountBasedDiscount = new AmountBasedDiscount(UUID.randomUUID(), "Buy 250 Free 50", 250.00);
     }
 
 }
