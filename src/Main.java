@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
         DataGenerator.createCustomer();
         DataGenerator.createCategory();
@@ -38,6 +38,14 @@ public class Main {
                     }
                     break;
                 case 1:
+                    try {
+                        for(Product product: StaticConstants.PRODUCT_LIST){
+                            System.out.println("Product name: " + product.getName() + "Product category name:" + product.getCategoryName());
+                        }
+                    }catch (Exception e){
+                        System.out.println("Product could not print because category not found for product name:" + e.getMessage().split(",")[1]);
+                    }
+
                     break;
                 case 2:
                     break;
