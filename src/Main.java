@@ -1,3 +1,5 @@
+import category.Category;
+
 import java.util.Scanner;
 
 public class Main {
@@ -31,6 +33,9 @@ public class Main {
 
             switch (menuSelection){
                 case 0:
+                    for(Category category: StaticConstants.CATEGORY_LIST){
+                        System.out.println("Category Code" + category.generateCategoryCode() + " category name:" + category.getName());
+                    }
                     break;
                 case 1:
                     break;
@@ -47,6 +52,8 @@ public class Main {
                 case 7:
                     break;
                 case 8:
+                    break;
+                case 9:
                     break;
 
             }
