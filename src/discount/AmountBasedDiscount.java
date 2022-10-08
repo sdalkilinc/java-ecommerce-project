@@ -15,4 +15,8 @@ public class AmountBasedDiscount extends Discount{
     public Double calculateCartAmountAfterDiscountApplied(Double amount) {
         return null;
     }
+
+    public Double getDiscountAmount() {
+        return discountAmount;
+    }
 }
