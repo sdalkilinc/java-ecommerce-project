@@ -53,6 +53,8 @@ public class Product {
             }
         }
         throw new Exception("Category not found," + getName());
+
+        //e.getMessage - > Category no found, Milk
     }
 
 }
