@@ -63,9 +63,31 @@ public class Main {
                     System.out.println("Total Balance:" + totalBalance);
                     System.out.println("Customer Balance:" + cBalance.getBalance());
                     System.out.println("Gift Card Balance:" + gBalance.getBalance());
-
                     break;
                 case 4:
+                    CustomerBalance customerBalance = findCustomerBalance(customer.getId());
+                    GiftCardBalance giftCardBalance = findGiftCardBalance(customer.getId());
+                    System.out.println("Which Account would you like to add?");
+                    System.out.println("Type 1 for Customer Balance:" + customerBalance.getBalance());
+                    System.out.println("Type 2 for Gift Card Balance:" + giftCardBalance.getBalance());
+                    int balanceAccountSelection = scanner.nextInt();
+                    System.out.println("How much you would like to add?");
+                    double additionalAmount = scanner.nextInt();
+
+                    switch (balanceAccountSelection){
+                        case 1:
+                            customerBalance.addBalance(additionalAmount);
+                            System.out.println("New Customer Balance:" + customerBalance.getBalance());
+                            break;
+                        case 2:
+                            giftCardBalance.addBalance(additionalAmount);
+                            System.out.println("New Gift Card Balance:" + giftCardBalance.getBalance());
+                            break;
+                    }
+
+
+
+
                     break;
                 case 5:
                     break;
@@ -79,10 +101,10 @@ public class Main {
                     break;
 
             }
-
         }
-
     }
+
+
 
     private static CustomerBalance findCustomerBalance(UUID customerId){
 
@@ -104,12 +126,14 @@ public class Main {
                 return (GiftCardBalance) giftCardBalance;
             }
         }
+
         GiftCardBalance giftCardBalance = new GiftCardBalance(customerId, 0d);
         StaticConstants.GIFT_CARD_BALANCE_LIST.add(giftCardBalance);
 
         return giftCardBalance;
-
     }
+
+
 
     private static String[] prepareMenuOptions(){
         return new String[] {"List Categories", "List Products", "List Discount", "See Balance", "Add Balance",
