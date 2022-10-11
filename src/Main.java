@@ -99,11 +99,19 @@ public class Main {
                                         "id:" + product.getId() + "price:" + product.getPrice() +
                                         "product category" + product.getCategoryName() +
                                                 "stock:" + product.getRemainingStock() +
-                                                "product delivery due" + product.deliveryDueDate()
+                                                "product delivery due" + product.getDeliveryDueDate()
                                 );
                             } catch (Exception e) {
                                 System.out.println(e.getMessage());
                             }
+                        }
+
+                        String productId = scanner.next();
+                        try {
+                            Product product = findProductById(productId);
+                        } catch (Exception e) {
+                            System.out.println("Product does not exist. Please try again");
+                            continue;
                         }
                     }
 
@@ -121,6 +129,15 @@ public class Main {
         }
     }
 
+    private static Product findProductById(String productId) throws Exception {
+
+        for(Product product: StaticConstants.PRODUCT_LIST){
+            if(product.getId().toString().equals(productId)){
+                return product;
+            }
+        }
+        throw new Exception("Product not found");
+    }
 
 
     private static CustomerBalance findCustomerBalance(UUID customerId){
