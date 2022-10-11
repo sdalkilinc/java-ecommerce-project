@@ -109,9 +109,18 @@ public class Main {
                         String productId = scanner.next();
                         try {
                             Product product = findProductById(productId);
+                            if(!putItemToCartIfStockAvailable(cart, product)){
+                                System.out.println("Stock is insufficient. Please try again");
+                                continue;
+                            }
                         } catch (Exception e) {
                             System.out.println("Product does not exist. Please try again");
                             continue;
+                        }
+                        System.out.println("Do you want to add more product. Type Y for adding more, N for exit");
+                        String decision = scanner.next();
+                        if(!decision.equals("Y")){
+                            break;
                         }
                     }
 
