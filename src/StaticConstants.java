@@ -14,4 +14,5 @@ public class StaticConstants {
     public static final List<Discount> DISCOUNT_LIST = new ArrayList<>();
 
 
+
 }
