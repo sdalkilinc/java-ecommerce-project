@@ -22,10 +22,6 @@ public abstract class Balance {
         return balance;
     }
 
-    public void setCustomerId(UUID customerId) {
-        this.customerId = customerId;
-    }
-
     public void setBalance(Double balance) {
         this.balance = balance;
     }
